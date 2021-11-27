@@ -1,10 +1,36 @@
+html{
+  font-family: 'Abel', sans-serif;
+  text-shadow: 2px 2px blue, 3px 3px red;
+}
+.content{
+  position:absolute;
+  top :0%;
+  left: 4vw;
+  width:95vw;
+  scroll-behavior: smooth;
+  background-image: url(./components/images/background.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  color:white;
+}
+.click{
+  position: relative;
+  top:100%;
+  left:10%;
+}
+.click img{
+  width:10%;
+}
+
+
 .header{
-  background-color: red;
   position:fixed;
   left:0;
   top:0;
   height:100%;
-  max-width: 65px;
+  width: 4vw;
+  background-image: url(./components/images/headerBack.jpg);
+  box-shadow: 5px 1px 5px rgb(44, 44, 44);
 }
 .header .buttons{
   height:30%;
@@ -14,41 +40,319 @@
 .header button{
   height:20%;
   width:100%;
+  background-image: url(./components/images/headerBack.jpg);
 }
 .header img{
   width:100%;
   height:100%;
+  filter: contrast(100%);
 }
 .header .active{
   background-color: green;
 }
-
-
-.content{
-  position:fixed;
-  top :0%;
-  left: 65px;
+@media (max-width: 992px) {
+  .header .buttons{
+    height:20%;
+    position:relative;
+    top:40%;
+  }
 }
-.introduction img {
-  width:150%;
-  margin-left: -40%;
+
+#introduction{
+  height:100%;
+  width:100%;
+  padding-top: 2.5%;
+  padding-bottom: 5%;
 }
-.introduction .grid{
+#introduction .headshot{
+  animation-name: headshot;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+@keyframes headshot {
+  0%     { transform: translate(10%, -10%); opacity:0;}
+  100%   { transform: translate(0%, 0%); opacity:1;}   
+}
+#introduction img {
+  width:100%;
+  padding-top: 2.5%;
+  filter: grayscale(85%);
+}
+#introduction .welcome{
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 100%;
-  grid-column-gap: 5px;
 }
-.introduction .welcome {
-  background: #ce8888;
-  padding-top:50%;
-  padding-left: 25%;
+#introduction .welcomeMessage {
+  position:relative;
+  text-align: center;
+}
+#introduction .welcomeMessage h3{
+  font-size: 1.5vw;
+  position:relative;
+  top:37.5%;
+}
+#introduction .welcomeMessage span{
+  font-size: 5vw;
+  position:relative;
+  top:37.5%;
+}
+#introduction .ringContainer{
+  position:absolute;
+  width:100%;
+  height:100%;
+}
+#introduction .ring1,.ring2,.ring3{
+  position:absolute;
+  top:12.5%;
+  left:12.5%;
+}
+#introduction .ring1{
+  animation-name: ring1;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes ring1 {
+  0%   { transform: rotate(0deg) scale(.8); }
+  12.5%   { transform:rotate(45deg) scale(1.2); }
+  25%   { transform:rotate(90deg)  scale(.8); }
+  37.5%   { transform:rotate(135deg)   scale(1.2); }
+  50%   { transform:rotate(180deg)   scale(.8); }
+  62.5%   { transform:rotate(225deg)   scale(1.2); }
+  75%   { transform:rotate(270deg)  scale(.8); }
+  87.5%   { transform:rotate(315deg)  scale(1.2); }
+  100%   { transform:rotate(360deg)   scale(.8); }   
+}
+#introduction .ring2{
+  animation-name: ring2;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes ring2 {
+  0%   { transform: rotate(0deg) scale(1); }
+  12.5%   { transform:rotate(45deg) scale(1.1); }
+  25%   { transform:rotate(90deg)  scale(1); }
+  37.5%   { transform:rotate(135deg)   scale(.9); }
+  50%   { transform:rotate(180deg)   scale(1); }
+  62.5%   { transform:rotate(225deg)   scale(1.1); }
+  75%   { transform:rotate(270deg)  scale(1); }
+  87.5%   { transform:rotate(315deg)  scale(.9); }
+  100%   { transform:rotate(360deg)   scale(1); }   
+}
+#introduction .ring3{
+  animation-name: ring3;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes ring3 {
+  0%   { transform: rotate(0deg) scale(1.2); }
+  12.5%   { transform:rotate(45deg) scale(1.1); }
+  25%   { transform:rotate(90deg)  scale(1); }
+  37.5%   { transform:rotate(135deg)   scale(.9); }
+  50%   { transform:rotate(180deg)   scale(.8); }
+  62.5%   { transform:rotate(225deg)   scale(.9); }
+  75%   { transform:rotate(270deg)  scale(1); }
+  87.5%   { transform:rotate(315deg)  scale(1.1); }
+  100%   { transform:rotate(360deg)   scale(1.2); }   
 }
 
-.introduction .welcome h3{
-  font-size: 20px;
+
+
+#about{
+  font-size: 3vw;
+  padding-left:5%;
+  padding-right:5%;
+  text-align: center;
+  width:90%;
+  padding-bottom: 5%;
+}
+#about .letter{
+  animation-name: letter;
+  animation-duration: .25s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+@keyframes letter {
+  0% { transform: translate(0, 0px); color:blue;}
+  10% { transform: translate(0, -2px); color:blue;}
+  20% { transform: translate(0, -4px); color:red;}
+  30% { transform: translate(0, -6px); color:red;}
+  40% { transform: translate(0, -8px); color:yellow;}
+  50% { transform: translate(0, -10px); color:yellow;}
+  60% { transform:  translate(0, -8px); color:green;}
+  70% { transform: translate(0, -6px); color:green;}
+  80% { transform:  translate(0, -4px); color:orange;}
+  90% { transform: translate(0, -2px); color:orange;}
+  100% { transform: translate(0, -0px); color: purple;}
 }
 
-.introduction .welcome span{
-  font-size: 80px;
+
+
+
+#skills .hole .holeIcon{
+  width:50%;
+  position: relative;
+  top:-5%;
+  filter:contrast(50%) drop-shadow(2px 2px 7px #4444dd);
+}
+#skills .hole .skillIcon{
+  width:25%;
+  padding-top: 15%;
+  filter: drop-shadow(4px 3px 5px #4444dd);
+}
+#skills{
+  font-size: 3vw;
+  text-align: center;
+  padding-bottom: 5%;
+}
+.skillsGrid{
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows:50% 50%;
+}
+#skills .skillContainer{
+  width:100%;
+  height:25%;
+  position: relative;
+  top:35%;
+}
+.floating{
+  animation-name: floating;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+} 
+ .rise{
+  animation-name: rise;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+} 
+  @keyframes floating {
+  0% { transform: translate(0,  0px); }
+  50%  { transform: translate(0, 20px); }
+  100%   { transform: translate(0, -0px); }   
+}
+ @keyframes rise {
+  0% { transform: translate(0,  0%) scale(0);}
+  100%  { transform: translate(0, -200%) scale(1);}
+} 
+#skills .firstStar{
+  width:20%;
+  position:absolute;
+  left:20%;
+  top:50%;
+  animation-name: first;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes first {
+  0% { transform: scale(0); }
+  100%  { transform: scale(1); }
+}
+#skills .secondStar{
+  width:25%;
+  position:absolute;
+  left:37.5%;
+  animation-name: first;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+#skills .thirdStar{
+  width:20%;
+  position:absolute;
+  left:60%;
+  top:50%;
+  animation-name: first;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+#skills .starContainer{
+  position:relative;
+  top:-10%;
+  width:100%;
+  height:50px;
+  filter: drop-shadow(1px 1px 5px yellow);
+}
+
+
+
+#projects{
+  text-align: center;
+  font-size: 3vw;
+  height:100%;
+}
+.project img{
+  width:50%;
+  height:25vw;
+  position: relative;
+  left:25%;
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
+}
+.project {
+  width: 100%;
+  height:100%;
+  background-image: url(./components/images/card.jpg);
+  font-size: 1vw;
+  text-align: left;
+  padding-left: 1.5%;
+}
+
+
+#contact{
+  text-align: center;
+  font-size: 3vw;
+  height:100%;
+  margin-top: 7.5%;
+}
+#contact .form{
+  text-align: left;
+  font-size: 1.5vw;
+  padding-bottom: 10%;
+  padding-left: 15%;
+  display: grid;
+  grid-template-columns: 20% 60%;
+  grid-template-rows:10% 10% 70% 10%;
+  grid-row-gap: 10%;
+}
+#contact .submit{
+  width:20%;
+  position: relative;
+  right:-80%;
+  border-radius: 5px;
+  box-shadow: 5px 3px 3px grey;
+  font-size: 1vw;
+}
+#contact .formName, .formEmail{
+  font-size: 1.5vw;
+  border-radius: 5px;
+  box-shadow: 5px 3px 3px grey;
+}
+
+#contact .formMessage{
+  line-height: 1.5vw;
+  border-radius: 5px;
+  font-size: 1.5vw;
+  height:150px;
+  box-shadow: 5px 3px 3px grey;
+}
+
+
+.footer{
+  text-align: right;
+}
+.footer img{  
+  width:5%;
+  padding-left: 1.25%;
+  padding-right: 1.25%;
+  padding-bottom: 1.25%;
 }
